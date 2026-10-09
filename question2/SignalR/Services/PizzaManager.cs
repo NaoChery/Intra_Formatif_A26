@@ -1,4 +1,6 @@
-﻿namespace SignalR.Services
+﻿using Microsoft.AspNetCore.SignalR;
+
+namespace SignalR.Services
 {
     // Pizza avec ou sans ananas
     public enum PizzaChoice
@@ -22,7 +24,7 @@
         // Le data pour les 2 types de pizza
         PizzaData[] PizzasData { get; set; } = [new(), new()];
 
-        public void AddUser()
+        public async Task AddUser()
         {
             NbConnectedUsers++;
         }
